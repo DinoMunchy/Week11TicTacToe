@@ -1,0 +1,98 @@
+/* Game grid layout using CSS Grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Individual cell styling */
+.cell {
+    aspect-ratio: 1; /* Maintain square shape */
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+/* Hover effect for cells */
+.cell:hover {
+    background-color: #e9ecef;
+    transform: scale(1.05);
+}
+
+/* Animation for placing X and O */
+.cell.x, .cell.o {
+    animation: popIn 0.3s ease-out;
+}
+
+/* Pop-in animation keyframes */
+@keyframes popIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Player X styling (blue) */
+.cell.x {
+    color: #0d6efd;
+}
+
+/* Player O styling (red) */
+.cell.o {
+    color: #dc3545;
+}
+
+/* Score board layout */
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Individual score item styling */
+.score-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+/* Player X score color */
+.player-x {
+    color: #0d6efd;
+}
+
+/* Player O score color */
+.player-o {
+    color: #dc3545;
+}
+
+/* Alert container positioning */
+#alert-container {
+    z-index: 1000;
+    min-width: 300px;
+}
+
+/* Alert animation */
+.alert-success {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Slide-down animation keyframes */
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+} 
